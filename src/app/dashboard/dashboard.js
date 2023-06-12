@@ -167,12 +167,7 @@ class Dashboard extends Component {
 
                                                         </p>
                                                     </div>
-                                                    <a
-                                                        href="#"
-                                                        className="inline-block text-blue-500 underline hover:text-blue-400"
-                                                    >
-                                                        Read more
-                                                    </a>
+                                                  
                                                 </div>
                                             </div>
                                         );

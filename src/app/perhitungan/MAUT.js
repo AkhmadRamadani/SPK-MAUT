@@ -19,19 +19,34 @@ class MAUT {
     normalizeBobotKriteria() {
         let sum = 0;
         this.perhitungan.kriteria.forEach((e, i) => {
-            sum += parseInt(e.bobot);
+            sum += parseFloat(e.bobot);
+            sum = parseFloat(sum.toFixed(1));
         });
-        this.perhitungan.kriteria.forEach((e, i) => {
-            this.perhitungan.kriteria[i].bobotNorm = parseInt(e.bobot) / sum;
-        });
+        console.log("total bobot", sum);
+        if (sum === 1) {
+            console.log("sum bobot = 1");
+            for (let i = 0; i < this.perhitungan.kriteria.length; i++) {
+                this.perhitungan.kriteria[i].bobotNorm = this.perhitungan.kriteria[i].bobot;
+            }
+        } else {
+            console.log("sum bobot != 1");
+            for (let i = 0; i < this.perhitungan.kriteria.length; i++) {
+                this.perhitungan.kriteria[i].bobotNorm = this.perhitungan.kriteria[i].bobot / sum;
+            }
+        }
     }
 
     #costNormalization(data, min, max) {
-        return (max - data) / (max - min);
+        let hasil = (max - data) / (max - min);
+        if (isNaN(hasil)) return 1;
+        return hasil;
     }
 
     #benefitNormalization(data, min, max) {
-        return (data - min) / (max - min);
+        let hasil = (data - min) / (max - min);
+        // if hasil NaN, return 1
+        if (isNaN(hasil)) return 1;
+        return hasil;
     }
 
 

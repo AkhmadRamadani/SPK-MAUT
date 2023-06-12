@@ -31,7 +31,9 @@ class ProfileView extends Component {
     }
 
     getListPerhitungan = async () => {
-        const { user } = this.state;
+        const { user } = this.props;
+
+        if (!user) return;
 
         const q = query(collection(firestore, "perhitungan"), where("author", "==", user.uid));
         const docs = await getDocs(q);
@@ -104,12 +106,7 @@ class ProfileView extends Component {
 
                                                         </p>
                                                     </div>
-                                                    <a
-                                                        href="#"
-                                                        className="inline-block text-blue-500 underline hover:text-blue-400"
-                                                    >
-                                                        Read more
-                                                    </a>
+                                                    
                                                 </div>
                                             </div>
                                         );
