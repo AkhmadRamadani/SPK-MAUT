@@ -104,7 +104,7 @@ class DataAwal extends React.Component {
                         <td className="px-6 py-3 text-sm">{e.name}</td>
                         <td className="px-6 py-3 text-sm">{e.bobot}</td>
                         <td className="px-6 py-3 text-sm">
-                          {e.tipe == 1 ? 'Benefit' : 'Cost'}
+                          {e.tipe === 1 ? 'Benefit' : 'Cost'}
                         </td>
                       </tr>
                     );

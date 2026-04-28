@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import DataAwal from "./data_awal";
 import MinMax from "./min_max";
 import Normalisasi from "./normalisasi";
@@ -7,7 +7,7 @@ import Pembobotan from "./pembobotan";
 import Rank from "./rank";
 import { Header } from "../components/Header";
 import CustomDialog from "../components/Dialog";
-import { deleteDoc, collection, where, query, doc } from "firebase/firestore";
+import { deleteDoc, doc } from "firebase/firestore";
 import { firestore } from "../../firebase/firebase_config";
 
 export default function Result(props) {
@@ -331,7 +331,8 @@ class ResultView extends Component {
                         </div>
                         <ul className="hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400">
                             <li className="w-full">
-                                <a
+                                <button
+                                    type="button"
                                     onClick={() => this.selectTabHandler(0)}
                                     className={
                                         this.state.selectedTab === 0 ?
@@ -340,10 +341,11 @@ class ResultView extends Component {
                                     }
                                 >
                                     Data Awal
-                                </a>
+                                </button>
                             </li>
                             <li className="w-full">
-                                <a
+                                <button
+                                    type="button"
                                     onClick={() => this.selectTabHandler(1)}
                                     className={
                                         this.state.selectedTab === 1 ?
@@ -352,10 +354,11 @@ class ResultView extends Component {
                                     }
                                 >
                                     Min Max
-                                </a>
+                                </button>
                             </li>
                             <li className="w-full">
-                                <a
+                                <button
+                                    type="button"
                                     onClick={() => this.selectTabHandler(2)}
                                     className={
                                         this.state.selectedTab === 2 ?
@@ -364,10 +367,11 @@ class ResultView extends Component {
                                     }
                                 >
                                     Normalisasi
-                                </a>
+                                </button>
                             </li>
                             <li className="w-full">
-                                <a
+                                <button
+                                    type="button"
                                     onClick={() => this.selectTabHandler(3)}
                                     className={
                                         this.state.selectedTab === 3 ?
@@ -376,10 +380,11 @@ class ResultView extends Component {
                                     }
                                 >
                                     Pembobotan
-                                </a>
+                                </button>
                             </li>
                             <li className="w-full">
-                                <a
+                                <button
+                                    type="button"
                                     onClick={() => this.selectTabHandler(4)}
                                     className={
                                         this.state.selectedTab === 4 ?
@@ -388,7 +393,7 @@ class ResultView extends Component {
                                     }
                                 >
                                     Hasil
-                                </a>
+                                </button>
                             </li>
                         </ul>
                     </div>
