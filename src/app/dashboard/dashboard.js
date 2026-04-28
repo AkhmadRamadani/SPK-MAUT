@@ -46,7 +46,9 @@ class Dashboard extends Component {
             querySnapshot.forEach((doc) => {
                 let data = doc.data();
                 data.id = doc.id;
-                listPerhitungan.push(data);
+                if (data.isPublic !== false) {
+                    listPerhitungan.push(data);
+                }
             });
             this.setState({ listPerhitungan, isLoading: false });
         });
@@ -145,7 +147,7 @@ class Dashboard extends Component {
                                                     {e.name}
                                                 </h1>
                                                 <p className="mt-2 text-gray-500 dark:text-gray-400">
-                                                    {e.deskripsi.substring(0, 120)}...
+                                                    {e.deskripsi ? e.deskripsi.substring(0, 120) : ""}...
                                                 </p>
                                                 <div className="flex items-center justify-between mt-4">
                                                     <div>
@@ -158,11 +160,11 @@ class Dashboard extends Component {
                                                         <p className="text-sm text-gray-500 dark:text-gray-400">
 
                                                             {
-                                                                new Intl.DateTimeFormat('id-ID', {
+                                                                e.createdAt && e.createdAt.toDate ? new Intl.DateTimeFormat('id-ID', {
                                                                     year: 'numeric',
                                                                     month: 'long',
                                                                     day: '2-digit'
-                                                                }).format(e.createdAt.toDate())
+                                                                }).format(e.createdAt.toDate()) : ""
                                                             }
 
                                                         </p>

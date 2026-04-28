@@ -56,6 +56,7 @@ class InputView extends Component {
                 kriteria: [],
                 alternatif: [],
                 deskripsi: '',
+                isPublic: true,
             },
             isDialogOpen: false,
             errorWarning: false,
