@@ -10,7 +10,11 @@ class Input1 extends Component {
 
     changeHandler = (e) => {
         let newPerhitungan = { ...this.state.perhitungan };
-        newPerhitungan[e.target.name] = e.target.value;
+        if (e.target.name === "isPublic") {
+            newPerhitungan[e.target.name] = e.target.checked;
+        } else {
+            newPerhitungan[e.target.name] = e.target.value;
+        }
         this.props.handler(newPerhitungan)
         this.setState({ perhitungan: newPerhitungan });
 
@@ -141,6 +145,23 @@ class Input1 extends Component {
                                     defaultValue={perhitungan.deskripsi}
                                     onChange={this.changeHandler}
                                 />
+                            </div>
+
+                            <div className="sm:col-span-2 flex items-center">
+                                <input
+                                    type="checkbox"
+                                    name="isPublic"
+                                    id="isPublic"
+                                    className="w-4 h-4 text-primary-600 bg-gray-100 border-gray-300 rounded focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                    defaultChecked={perhitungan.isPublic !== false}
+                                    onChange={this.changeHandler}
+                                />
+                                <label
+                                    htmlFor="isPublic"
+                                    className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                >
+                                    Jadikan Publik (Dapat dilihat oleh semua orang)
+                                </label>
                             </div>
                         </div>
                     </form>
