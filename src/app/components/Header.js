@@ -1,8 +1,5 @@
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { signInWithGoogle } from '../../firebase/firebase_config'
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from '../../firebase/firebase_config'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 

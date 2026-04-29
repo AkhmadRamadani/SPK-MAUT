@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component, useEffect } from 'react';
 import Input2 from './input2';
 import Input3 from './input3';
 import Input4 from './input4';
@@ -26,7 +26,7 @@ function NavigateToResult(props) {
     const navigate = useNavigate();
     React.useEffect(() => {
         navigate('/result', { state: { perhitungan: props.perhitungan } });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [navigate, props.perhitungan]);
 }
 

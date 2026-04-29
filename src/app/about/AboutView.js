@@ -1,11 +1,9 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, RocketLaunchIcon } from '@heroicons/react/20/solid'
+import { ServerIcon, RocketLaunchIcon } from '@heroicons/react/20/solid'
 import ss from "../../assets/ss.png"
 import { Header } from '../components/Header'
-import { Link } from 'react-router-dom'
 import { signInWithGoogle } from '../../firebase/firebase_config'
-import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from '../../firebase/firebase_config'
-import React, { useEffect } from 'react'
+import React from 'react'
 import withNavigateHooks from '../navigate/withNavigateHooks'
 
 class AboutView extends React.Component {

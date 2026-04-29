@@ -64,7 +64,7 @@ class ProfileView extends Component {
                             }}
                         />
                     </div>
-                    
+
                     <section className="bg-none dark:bg-gray-900">
                         <div className="container px-6 py-10 mx-auto">
                             <div className="flex items-center justify-between">
@@ -88,12 +88,11 @@ class ProfileView extends Component {
                                                 </p>
                                                 <div className="flex items-center justify-between mt-4">
                                                     <div>
-                                                        <a
-                                                            href="#"
+                                                        <p
                                                             className="text-lg font-medium text-gray-700 dark:text-gray-300 hover:underline hover:text-gray-500"
                                                         >
                                                             {e.authorName}
-                                                        </a>
+                                                        </p>
                                                         <p className="text-sm text-gray-500 dark:text-gray-400">
 
                                                             {
@@ -106,7 +105,7 @@ class ProfileView extends Component {
 
                                                         </p>
                                                     </div>
-                                                    
+
                                                 </div>
                                             </div>
                                         );

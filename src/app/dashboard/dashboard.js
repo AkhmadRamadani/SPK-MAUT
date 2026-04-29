@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component } from "react";
 import { auth, signInWithGoogle, firestore } from "../../firebase/firebase_config";
 import { Header } from "../components/Header";
 import { Link } from "react-router-dom";
@@ -166,7 +166,7 @@ class Dashboard extends Component {
 
                                                         </p>
                                                     </div>
-                                                  
+
                                                 </div>
                                             </div>
                                         );
