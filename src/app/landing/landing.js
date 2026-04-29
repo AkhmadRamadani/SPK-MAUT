@@ -16,6 +16,7 @@ const navigation = [
 
 export default function Landing() {
 
+  // eslint-disable-next-line
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [user] = useAuthState(auth);
 
@@ -40,10 +41,10 @@ export default function Landing() {
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               Announcing our Decisions Support System
-              <a href="#" className="font-semibold text-indigo-600">
+              <button type="button" className="font-semibold text-indigo-600">
                 <span className="absolute inset-0" aria-hidden="true" />
                 <span className="relative"> MAUT-APP</span>
-              </a>
+              </button>
             </div>
           </div>
           <div className="text-center">
