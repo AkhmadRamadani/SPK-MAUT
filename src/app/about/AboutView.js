@@ -1,4 +1,4 @@
-import { ServerIcon, RocketLaunchIcon } from '@heroicons/react/20/solid'
+import { ServerIcon, RocketLaunchIcon, LockClosedIcon } from '@heroicons/react/20/solid'
 import ss from "../../assets/ss.png"
 import { Header } from '../components/Header'
 import { signInWithGoogle } from '../../firebase/firebase_config'
@@ -70,7 +70,7 @@ class AboutView extends React.Component {
                                 <p>
                                     The MAUT (Multi-Attribute Utility Theory) method is a decision-making method used to evaluate available alternatives based on a series of relevant attributes or criteria. In this method, each attribute is given a weight that describes its level of importance, and each alternative is assessed based on these attributes.
                                 </p>
-                                <ul role="list" className="mt-8 space-y-8 text-gray-600">
+                                <ul className="mt-8 space-y-8 text-gray-600">
                                     <li className="flex gap-x-3">
                                         <RocketLaunchIcon className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
                                         <span>

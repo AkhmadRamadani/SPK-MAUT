@@ -1,12 +1,7 @@
 import React, { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
-import DialogType from '../enum/DialogType'
 
 class LoadingDialog extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     closeHandler = () => {
         this.props.handler()

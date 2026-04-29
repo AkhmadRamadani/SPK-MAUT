@@ -50,25 +50,13 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@tailwindcss/forms": "^0.5.3",
     "react-router-dom": "^6.11.2",
     "tailwindcss": "^3.3.2"
   },
   "overrides": {
-    "domexception": "npm:domexception@4.0.0",
-    "abab": "npm:abab@2.0.6",
-    "acorn-import-assertions": "npm:acorn-import-attributes@1.9.5",
-    "@humanwhocodes/config-array": "npm:@eslint/config-array@0.19.2",
-    "@humanwhocodes/object-schema": "npm:@eslint/object-schema@2.1.6",
-    "glob": "^10.4.5",
-    "svgo": "^3.3.2",
-    "source-map": "^0.7.4",
-    "@babel/plugin-proposal-unicode-property-regex": "npm:@babel/plugin-transform-unicode-property-regex@7.27.1",
-    "@babel/plugin-proposal-private-property-in-object": "npm:@babel/plugin-transform-private-property-in-object@7.27.1",
-    "@babel/plugin-proposal-private-methods": "npm:@babel/plugin-transform-private-methods@7.27.1",
-    "@babel/plugin-proposal-numeric-separator": "npm:@babel/plugin-transform-numeric-separator@7.27.1",
-    "@babel/plugin-proposal-optional-chaining": "npm:@babel/plugin-transform-optional-chaining@7.27.1",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "npm:@babel/plugin-transform-nullish-coalescing-operator@7.27.1",
-    "@babel/plugin-proposal-class-properties": "npm:@babel/plugin-transform-class-properties@7.27.1"
+    "nth-check": "^2.1.1",
+    "postcss": "^8.4.31"
   }
 }
