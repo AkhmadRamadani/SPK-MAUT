@@ -1,9 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import { auth, signInWithGoogle, firestore } from "../../firebase/firebase_config";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { Header } from "../components/Header";
-import { Dialog } from "@headlessui/react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getDocs, collection } from '@firebase/firestore';
 import LoadingDialog from "../components/LoadingDialog";
 import withNavigateHooks from "../navigate/withNavigateHooks";
@@ -151,12 +149,11 @@ class Dashboard extends Component {
                                                 </p>
                                                 <div className="flex items-center justify-between mt-4">
                                                     <div>
-                                                        <a
-                                                            href="#"
-                                                            className="text-lg font-medium text-gray-700 dark:text-gray-300 hover:underline hover:text-gray-500"
+                                                        <span
+                                                            className="text-lg font-medium text-gray-700 dark:text-gray-300"
                                                         >
                                                             {e.authorName}
-                                                        </a>
+                                                        </span>
                                                         <p className="text-sm text-gray-500 dark:text-gray-400">
 
                                                             {

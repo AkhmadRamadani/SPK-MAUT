@@ -1,18 +1,9 @@
-import { useEffect, useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { signInWithGoogle } from '../../firebase/firebase_config'
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from '../../firebase/firebase_config'
 import { Header } from '../components/Header'
-
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-]
 
 export default function Landing() {
 

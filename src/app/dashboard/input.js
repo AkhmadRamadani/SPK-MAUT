@@ -8,10 +8,9 @@ import DialogType from '../enum/DialogType';
 import MAUT from '../perhitungan/MAUT';
 import { read, utils } from 'xlsx';
 import LoadingDialog from '../components/LoadingDialog';
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { addDoc, collection, getDoc, doc, setDoc } from '@firebase/firestore';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { addDoc, collection, doc, setDoc } from '@firebase/firestore';
 import { firestore } from "../../firebase/firebase_config"
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase_config';
 import { Header } from '../components/Header';
 
@@ -27,16 +26,14 @@ function NavigateToResult(props) {
     const navigate = useNavigate();
     React.useEffect(() => {
         navigate('/result', { state: { perhitungan: props.perhitungan } });
-    }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [navigate, props.perhitungan]);
 }
 
 export function Input(props) {
     const location = useLocation();
-    const [data, setData] = useState();
-
     useEffect(() => {
         if (location.state) {
-            setData(location.state.perhitungan);
             console.log('location', location.state.perhitungan);
         }
     }, [location]);
