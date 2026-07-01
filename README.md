@@ -1,43 +1,60 @@
-# Sistem Pendukung Keputusan menggunakan Metode MAUT
+# Sistem Pendukung Keputusan (SPK-DSS)
 
-Proyek Sistem Pendukung Keputusan yang dibangun menggunakan metode MAUT (Multi-Attribute Utility Theory). Proyek ini dikembangkan dengan menggunakan ReactJS, Firebase, XLSX, dan Tailwind CSS.
+Proyek Sistem Pendukung Keputusan (SPK) yang menyediakan berbagai algoritma populer. Proyek ini dikembangkan dengan menggunakan Next.js, Firebase, XLSX, dan Tailwind CSS.
 
 ![Screenshot](https://raw.githubusercontent.com/AkhmadRamadani/SPK-MAUT/main/src/assets/ss.png)
 
 ## Deskripsi
 
-Proyek ini bertujuan untuk menyediakan sistem yang memungkinkan pengguna membuat keputusan berdasarkan sejumlah atribut dengan menggunakan metode MAUT. Metode MAUT adalah pendekatan yang digunakan untuk memilih alternatif terbaik dalam keadaan di mana ada banyak atribut yang harus dipertimbangkan.
+Proyek ini bertujuan untuk menyediakan sistem yang memungkinkan pengguna membuat keputusan berdasarkan sejumlah atribut atau kriteria dengan menggunakan berbagai metode SPK. Pendekatan ini digunakan untuk mengevaluasi dan memilih alternatif terbaik dalam keadaan di mana ada banyak variabel yang harus dipertimbangkan.
 
-Pengguna dapat memasukkan atribut dan bobotnya, serta menilai alternatif pada setiap atribut. Sistem akan mengolah data ini dan memberikan hasil berdasarkan perhitungan metode MAUT.
+Metode algoritma yang didukung saat ini:
+- **MAUT** (Multi-Attribute Utility Theory)
+- **SAW** (Simple Additive Weighting)
+- **TOPSIS** (Technique for Order of Preference by Similarity to Ideal Solution)
+- **WP** (Weighted Product)
+- **AHP** (Analytic Hierarchy Process)
+
+Pengguna dapat memasukkan kriteria dan bobotnya (tipe Benefit atau Cost), serta memberikan penilaian untuk setiap alternatif. Sistem akan mengolah data ini secara dinamis dan memberikan breakdown langkah-demi-langkah (matriks, vektor) beserta hasil peringkat akhir.
 
 ## Fitur
 
--   Pengguna dapat menambahkan atribut dan bobotnya.
--   Pengguna dapat menilai alternatif pada setiap atribut.
--   Sistem akan melakukan perhitungan berdasarkan metode MAUT.
--   Sistem akan memberikan hasil berupa rangking alternatif terbaik.
--   Pengguna dapat mengimpor perhitungan dari file format Excel (XLSX).
+- Mendukung berbagai algoritma SPK (MAUT, SAW, TOPSIS, WP, AHP).
+- Pengguna dapat menambahkan kriteria, bobot, dan tipe atribut secara fleksibel.
+- Pengguna dapat menilai alternatif pada setiap kriteria.
+- Menampilkan breakdown langkah perhitungan matematis secara transparan.
+- Sistem memberikan hasil berupa rangking alternatif terbaik.
+- Pengguna dapat mengimpor data awal dari file Excel (XLSX).
 
 ## Instalasi
 
-1.  Clone repositori ini ke direktori lokal Anda.
-2.  Buka terminal dan arahkan ke direktori proyek.
-3.  Jalankan perintah berikut untuk menginstal dependensi:
+1. Clone repositori ini ke direktori lokal Anda.
+2. Buka terminal dan arahkan ke direktori proyek.
+3. Jalankan perintah berikut untuk menginstal dependensi:
 
-Copy code
-
-`npm install` 
+```bash
+npm install
+```
 
 ## Konfigurasi Firebase
 
-1.  Buka proyek Firebase Anda atau buat proyek baru di [https://console.firebase.google.com/](https://console.firebase.google.com/).
-2.  Salin konfigurasi Firebase SDK dari Firebase Console
-3.  Edit pada file `firebase/firebase_config.js`
+1. Buka proyek Firebase Anda atau buat proyek baru di [https://console.firebase.google.com/](https://console.firebase.google.com/).
+2. Salin konfigurasi Firebase SDK dari Firebase Console.
+3. Buat file `.env.local` di root proyek dan tambahkan environment variable berikut:
+   - `NEXT_PUBLIC_FIREBASE_API_KEY`
+   - `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN`
+   - `NEXT_PUBLIC_FIREBASE_PROJECT_ID`
+   - `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET`
+   - `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
+   - `NEXT_PUBLIC_FIREBASE_APP_ID`
+   - `NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID`
 
 ## Menjalankan Aplikasi
-1.  Jalankan perintah berikut di terminal untuk menjalankan aplikasi:
 
+Jalankan perintah berikut di terminal untuk menjalankan aplikasi dalam mode *development*:
 
-`npm start` 
+```bash
+npm run dev
+```
 
-2.  Buka browser dan akses `http://localhost:3000` untuk melihat aplikasi berjalan.
+Buka browser dan akses `http://localhost:3000` untuk melihat aplikasi berjalan.
